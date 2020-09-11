@@ -1,0 +1,22 @@
+# started on Fri Sep 11 17:37:35 2020
+
+
+ Performance counter stats for './naive_multiply.out':
+
+        22 501 086      instructions              #    1,40  insn per cycle         
+        16 055 662      cycles                                                      
+           546 592      L1-dcache-load-misses     #    7,74% of all L1-dcache hits  
+         7 057 403      L1-dcache-loads                                             
+
+       0,016365796 seconds time elapsed
+
+# started on Fri Sep 11 17:37:36 2020
+
+
+ Performance counter stats for './naive_multiply.out':
+
+             6 258      LLC-load-misses           #   25,83% of all LL-cache hits   
+            24 230      LLC-loads                                                   
+
+       0,019891142 seconds time elapsed
+

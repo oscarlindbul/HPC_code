@@ -1,0 +1,22 @@
+# started on Fri Sep 11 17:37:36 2020
+
+
+ Performance counter stats for './opt_multiply.out':
+
+        25 380 827      instructions              #    2,32  insn per cycle         
+        10 942 683      cycles                                                      
+           181 381      L1-dcache-load-misses     #    2,57% of all L1-dcache hits  
+         7 057 895      L1-dcache-loads                                             
+
+       0,016074608 seconds time elapsed
+
+# started on Fri Sep 11 17:37:37 2020
+
+
+ Performance counter stats for './opt_multiply.out':
+
+             6 331      LLC-load-misses           #   25,43% of all LL-cache hits   
+            24 896      LLC-loads                                                   
+
+       0,018860664 seconds time elapsed
+
