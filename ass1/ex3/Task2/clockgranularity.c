@@ -16,6 +16,7 @@ int main(int argc, char *argv[])
   for (i=0; i<n; i++) {
     ticks[i] = mysecond();
   }
+  
   mindist = 1e10;
   maxdist = 0;
   for (i=1; i<n; i++) {
