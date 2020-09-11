@@ -1,0 +1,5 @@
+
+Time for Sparse Ax, nrows=100, nnz=460, T = 0.000001
+Time for Sparse Ax, nrows=10000, nnz=49600, T = 0.000080
+Time for Sparse Ax, nrows=1000000, nnz=4996000, T = 0.010506
+Time for Sparse Ax, nrows=100000000, nnz=499960000, T = 1.078487
