@@ -26,9 +26,10 @@ echo ""
 # 4
 mem=()
 for i in ${!nnz[@]}; do
-	${mem[$i]}=$(./size.out ${nnz[$i]} ${nrows[$i]})
+	mem[$i]=$(./size.out ${nnz[$i]} ${nrows[$i]})
 done
+echo ${mem[@]}
 echo "Measured Bandwidths"
 for i in ${!nnz[@]}; do
-	awk -v t=$exec_times[$i] -v mem=${mem[$i]} ' BEGIN { printf "%d: %.4e b/s", mem/t } '
+	awk -v t=${exec_times[$i]} -v mem=${mem[$i]} ' BEGIN { printf "%d, %.4e, %.4e b per s\n", mem, t, mem/t } '
 done
