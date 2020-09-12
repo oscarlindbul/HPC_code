@@ -1,0 +1,142 @@
+matrix_multiply.c:19:31: note: not vectorized: no grouped stores in basic block.
+matrix_multiply.c:26:3: note: not vectorized: loop contains function calls or data references that cannot be analyzed
+matrix_multiply.c:27:5: note: not vectorized: loop contains function calls or data references that cannot be analyzed
+matrix_multiply.c:29:33: note: not vectorized: not enough data-refs in basic block.
+matrix_multiply.c:27:5: note: not consecutive access matrix_b[i_25][j_26] = _6;
+matrix_multiply.c:27:5: note: not consecutive access matrix_r[i_25][j_26] = 0.0;
+matrix_multiply.c:27:5: note: not vectorized: no grouped stores in basic block.
+matrix_multiply.c:26:3: note: not vectorized: not enough data-refs in basic block.
+matrix_multiply.c:33:1: note: not vectorized: not enough data-refs in basic block.
+matrix_multiply.c:39:3: note: not vectorized: multiple nested loops.
+matrix_multiply.c:39:3: note: bad loop form.
+matrix_multiply.c:40:5: note: not vectorized: complicated access pattern.
+matrix_multiply.c:40:5: note: bad data access.
+
+matrix_multiply.c:41:7: note: misalign = 0 bytes of ref matrix_r[i_26][j_35]
+matrix_multiply.c:41:7: note: Unknown alignment for access: matrix_a[i_26][k_25]
+matrix_multiply.c:41:7: note: misalign = 0 bytes of ref matrix_b[k_25][j_35]
+matrix_multiply.c:41:7: note: misalign = 0 bytes of ref matrix_r[i_26][j_35]
+matrix_multiply.c:41:7: note: num. args = 4 (not unary/binary/ternary op).
+matrix_multiply.c:41:7: note: not ssa-name.
+matrix_multiply.c:41:7: note: use not simple.
+matrix_multiply.c:41:7: note: can't use a fully-masked loop because the target doesn't have the appropriate masked load or store.
+matrix_multiply.c:41:7: note: num. args = 4 (not unary/binary/ternary op).
+matrix_multiply.c:41:7: note: not ssa-name.
+matrix_multiply.c:41:7: note: use not simple.
+matrix_multiply.c:41:7: note: num. args = 4 (not unary/binary/ternary op).
+matrix_multiply.c:41:7: note: not ssa-name.
+matrix_multiply.c:41:7: note: use not simple.
+matrix_multiply.c:41:7: note: loop vectorized
+matrix_multiply.c:42:24: note: not vectorized: no vectype for stmt: vect_matrix_r_I_I_lsm.23_14 = MEM[(double *)vectp_matrix_r.21_23];
+ scalar_type: vector(2) double
+matrix_multiply.c:42:24: note: not vectorized: no vectype for stmt: vect__3.29_49 = MEM[(double *)vectp_matrix_b.27_47];
+ scalar_type: vector(2) double
+matrix_multiply.c:42:24: note: not vectorized: no vectype for stmt: MEM[(double *)vectp_matrix_r.32_55] = vect__5.31_51;
+ scalar_type: vector(2) double
+matrix_multiply.c:42:24: note: not vectorized: no grouped stores in basic block.
+matrix_multiply.c:40:5: note: not vectorized: not enough data-refs in basic block.
+matrix_multiply.c:40:5: note: not vectorized: not enough data-refs in basic block.
+matrix_multiply.c:39:3: note: not vectorized: not enough data-refs in basic block.
+matrix_multiply.c:46:1: note: not vectorized: not enough data-refs in basic block.
+matrix_multiply.c:52:3: note: step unknown.
+matrix_multiply.c:52:3: note: not vectorized: complicated access pattern.
+matrix_multiply.c:52:3: note: bad data access.
+matrix_multiply.c:53:5: note: step unknown.
+matrix_multiply.c:53:5: note: misalign = 0 bytes of ref matrix_r[i_19][j_20]
+matrix_multiply.c:53:5: note: num. args = 4 (not unary/binary/ternary op).
+matrix_multiply.c:53:5: note: not ssa-name.
+matrix_multiply.c:53:5: note: use not simple.
+matrix_multiply.c:53:5: note: can't use a fully-masked loop because the target doesn't have the appropriate masked load or store.
+matrix_multiply.c:53:5: note: reduc op not supported by target.
+matrix_multiply.c:53:5: note: loop vectorized
+matrix_multiply.c:53:5: note: reduc op not supported by target.
+matrix_multiply.c:54:11: note: not vectorized: no vectype for stmt: vect__1.64_17 = MEM[(double *)vectp_matrix_r.62_3];
+ scalar_type: vector(2) double
+matrix_multiply.c:54:11: note: not vectorized: not enough data-refs in basic block.
+matrix_multiply.c:52:3: note: not vectorized: not enough data-refs in basic block.
+matrix_multiply.c:52:3: note: not vectorized: not enough data-refs in basic block.
+matrix_multiply.c:57:9: note: not vectorized: not enough data-refs in basic block.
+matrix_multiply.c:52:3: note: step unknown.
+matrix_multiply.c:52:3: note: not vectorized: complicated access pattern.
+matrix_multiply.c:52:3: note: bad data access.
+matrix_multiply.c:53:5: note: step unknown.
+matrix_multiply.c:53:5: note: misalign = 0 bytes of ref matrix_r[i_107][j_108]
+matrix_multiply.c:53:5: note: num. args = 4 (not unary/binary/ternary op).
+matrix_multiply.c:53:5: note: not ssa-name.
+matrix_multiply.c:53:5: note: use not simple.
+matrix_multiply.c:53:5: note: can't use a fully-masked loop because the target doesn't have the appropriate masked load or store.
+matrix_multiply.c:53:5: note: reduc op not supported by target.
+matrix_multiply.c:53:5: note: loop vectorized
+matrix_multiply.c:53:5: note: reduc op not supported by target.
+matrix_multiply.c:71:3: note: not vectorized: multiple nested loops.
+matrix_multiply.c:71:3: note: bad loop form.
+matrix_multiply.c:39:3: note: not vectorized: multiple nested loops.
+matrix_multiply.c:39:3: note: bad loop form.
+matrix_multiply.c:40:5: note: not vectorized: complicated access pattern.
+matrix_multiply.c:40:5: note: bad data access.
+
+matrix_multiply.c:41:7: note: misalign = 0 bytes of ref matrix_r[i_104][j_74]
+matrix_multiply.c:41:7: note: Unknown alignment for access: matrix_a[i_104][k_63]
+matrix_multiply.c:41:7: note: misalign = 0 bytes of ref matrix_b[k_63][j_74]
+matrix_multiply.c:41:7: note: misalign = 0 bytes of ref matrix_r[i_104][j_74]
+matrix_multiply.c:41:7: note: num. args = 4 (not unary/binary/ternary op).
+matrix_multiply.c:41:7: note: not ssa-name.
+matrix_multiply.c:41:7: note: use not simple.
+matrix_multiply.c:41:7: note: can't use a fully-masked loop because the target doesn't have the appropriate masked load or store.
+matrix_multiply.c:41:7: note: num. args = 4 (not unary/binary/ternary op).
+matrix_multiply.c:41:7: note: not ssa-name.
+matrix_multiply.c:41:7: note: use not simple.
+matrix_multiply.c:41:7: note: num. args = 4 (not unary/binary/ternary op).
+matrix_multiply.c:41:7: note: not ssa-name.
+matrix_multiply.c:41:7: note: use not simple.
+matrix_multiply.c:41:7: note: loop vectorized
+matrix_multiply.c:39:3: note: not vectorized: multiple nested loops.
+matrix_multiply.c:39:3: note: bad loop form.
+matrix_multiply.c:40:5: note: not vectorized: complicated access pattern.
+matrix_multiply.c:40:5: note: bad data access.
+
+matrix_multiply.c:41:7: note: misalign = 0 bytes of ref matrix_r[i_101][j_86]
+matrix_multiply.c:41:7: note: Unknown alignment for access: matrix_a[i_101][k_82]
+matrix_multiply.c:41:7: note: misalign = 0 bytes of ref matrix_b[k_82][j_86]
+matrix_multiply.c:41:7: note: misalign = 0 bytes of ref matrix_r[i_101][j_86]
+matrix_multiply.c:41:7: note: num. args = 4 (not unary/binary/ternary op).
+matrix_multiply.c:41:7: note: not ssa-name.
+matrix_multiply.c:41:7: note: use not simple.
+matrix_multiply.c:41:7: note: can't use a fully-masked loop because the target doesn't have the appropriate masked load or store.
+matrix_multiply.c:41:7: note: num. args = 4 (not unary/binary/ternary op).
+matrix_multiply.c:41:7: note: not ssa-name.
+matrix_multiply.c:41:7: note: use not simple.
+matrix_multiply.c:41:7: note: num. args = 4 (not unary/binary/ternary op).
+matrix_multiply.c:41:7: note: not ssa-name.
+matrix_multiply.c:41:7: note: use not simple.
+matrix_multiply.c:41:7: note: loop vectorized
+matrix_multiply.c:42:24: note: not vectorized: no vectype for stmt: vect_matrix_r_I_I_lsm.111_153 = MEM[(double *)vectp_matrix_r.109_151];
+ scalar_type: vector(2) double
+matrix_multiply.c:42:24: note: not vectorized: no vectype for stmt: vect__25.117_170 = MEM[(double *)vectp_matrix_b.115_168];
+ scalar_type: vector(2) double
+matrix_multiply.c:42:24: note: not vectorized: no vectype for stmt: MEM[(double *)vectp_matrix_r.120_176] = vect__27.119_172;
+ scalar_type: vector(2) double
+matrix_multiply.c:42:24: note: not vectorized: no grouped stores in basic block.
+matrix_multiply.c:40:5: note: not vectorized: not enough data-refs in basic block.
+matrix_multiply.c:40:5: note: not vectorized: not enough data-refs in basic block.
+matrix_multiply.c:39:3: note: not vectorized: not enough data-refs in basic block.
+matrix_multiply.c:60:5: note: not vectorized: no grouped stores in basic block.
+matrix_multiply.c:42:24: note: not vectorized: no vectype for stmt: vect_matrix_r_I_I_lsm.98_34 = MEM[(double *)vectp_matrix_r.96_102];
+ scalar_type: vector(2) double
+matrix_multiply.c:42:24: note: not vectorized: no vectype for stmt: vect__36.104_56 = MEM[(double *)vectp_matrix_b.102_124];
+ scalar_type: vector(2) double
+matrix_multiply.c:42:24: note: not vectorized: no vectype for stmt: MEM[(double *)vectp_matrix_r.107_89] = vect__38.106_33;
+ scalar_type: vector(2) double
+matrix_multiply.c:42:24: note: not vectorized: no grouped stores in basic block.
+matrix_multiply.c:40:5: note: not vectorized: not enough data-refs in basic block.
+matrix_multiply.c:40:5: note: not vectorized: not enough data-refs in basic block.
+matrix_multiply.c:39:3: note: not vectorized: not enough data-refs in basic block.
+matrix_multiply.c:71:3: note: not vectorized: not enough data-refs in basic block.
+matrix_multiply.c:60:5: note: not vectorized: no grouped stores in basic block.
+matrix_multiply.c:54:11: note: not vectorized: no vectype for stmt: vect__44.90_129 = MEM[(double *)vectp_matrix_r.88_39];
+ scalar_type: vector(2) double
+matrix_multiply.c:54:11: note: not vectorized: not enough data-refs in basic block.
+matrix_multiply.c:52:3: note: not vectorized: not enough data-refs in basic block.
+matrix_multiply.c:52:3: note: not vectorized: not enough data-refs in basic block.
+matrix_multiply.c:79:3: note: not vectorized: not enough data-refs in basic block.
+matrix_multiply.c:79:3: note: not vectorized: not enough data-refs in basic block.

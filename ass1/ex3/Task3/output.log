@@ -1,0 +1,30 @@
+yuyang2@beskow-login2:/cfs/klemming/nobackup/y/yuyang2/task3> srun -n 1 ./benchmark.out
+sum=738252.500000
+Execution time:  0.00000279 s
+yuyang2@beskow-login2:/cfs/klemming/nobackup/y/yuyang2/task3> srun -n 1 ./benchmark.out
+sum=738252.500000
+Execution time:  0.00000292 s
+yuyang2@beskow-login2:/cfs/klemming/nobackup/y/yuyang2/task3> srun -n 1 ./benchmark.out
+sum=738252.500000
+Execution time:  0.00000285 s
+yuyang2@beskow-login2:/cfs/klemming/nobackup/y/yuyang2/task3> srun -n 1 ./benchmark.out
+sum=738252.500000
+Execution time:  0.00000288 s
+yuyang2@beskow-login2:/cfs/klemming/nobackup/y/yuyang2/task3> srun -n 1 ./benchmark.out
+sum=738252.500000
+Execution time:  0.00000290 s
+yuyang2@beskow-login2:/cfs/klemming/nobackup/y/yuyang2/task3> srun -n 1 ./benchmark.out
+sum=738252.500000
+Execution time:  0.00000266 s
+yuyang2@beskow-login2:/cfs/klemming/nobackup/y/yuyang2/task3> srun -n 1 ./benchmark.out
+sum=738252.500000
+Execution time:  0.00000267 s
+yuyang2@beskow-login2:/cfs/klemming/nobackup/y/yuyang2/task3> srun -n 1 ./benchmark.out
+sum=738252.500000
+Execution time:  0.00000310 s
+yuyang2@beskow-login2:/cfs/klemming/nobackup/y/yuyang2/task3> srun -n 1 ./benchmark.out
+sum=738252.500000
+Execution time:  0.00000286 s
+yuyang2@beskow-login2:/cfs/klemming/nobackup/y/yuyang2/task3> srun -n 1 ./benchmark.out
+sum=738252.500000
+Execution time:  0.00000291 s
