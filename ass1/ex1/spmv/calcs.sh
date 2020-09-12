@@ -31,5 +31,5 @@ done
 echo ${mem[@]}
 echo "Measured Bandwidths"
 for i in ${!nnz[@]}; do
-	awk -v t=${exec_times[$i]} -v mem=${mem[$i]} ' BEGIN { printf "%d, %.4e, %.4e b per s\n", mem, t, mem/t } '
+	awk -v t=${exec_times[$i]} -v mem=${mem[$i]} ' BEGIN { printf "%d, %.4e, %.4e b per s\n", mem, t, mem/(t*1028) } '
 done
