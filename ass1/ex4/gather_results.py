@@ -4,7 +4,7 @@ from tabulate import tabulate
 
 result_files=["naive_results_64.txt","opt_results_64.txt", "naive_results_1000.txt","opt_results_1000.txt"]
 
-fields=["instructions", "cycles", "L1-dcache-load-misses", "L1-dcache-loads", "LLC-load-misses", "LLC-loads", "seconds"]
+fields=["instructions", "cycles", "L1-dcache-load-misses", "L1-dcache-loads", "LLC-load-misses", "LLC-loads", "time elapsed"]
 
 field_pattern = re.compile("\s+([\d,\s]+).*")
 
@@ -14,7 +14,7 @@ for file in result_files:
     for field in fields:
         field_string = check_output(["grep", "--text", field, file]).decode("utf-8")
         match = field_pattern.match(field_string)
-        num = match.group(1).replace(" ", "")
+        num = "".join(match.group(1).split())
         if "," in num:
             field_val = float(num.replace(",","."))
         else:
@@ -39,7 +39,7 @@ table[3][0] = "L1 cache miss ratio"
 table[4][0] = "L1 cache miss rate PTI"
 table[5][0] = "LLC cache miss ratio"
 table[6][0] = "LLC cache miss rate PIT"
-op_order = ["seconds", "instructions per cycle", "L1 miss ratio", "L1 miss rate", "LLC miss ratio", "LLC miss rate"]
+op_order = ["time elapsed", "instructions per cycle", "L1 miss ratio", "L1 miss rate", "LLC miss ratio", "LLC miss rate"]
 for i in range(6):
     for j in range(4):
         table[i+1][j+1] = data[result_files[j]][op_order[i]]

@@ -15,12 +15,13 @@ for size in ${sizes[@]}; do
 
 	naive_r=naive_results_$size.txt
 	opt_r=opt_results_$size.txt
-
-	srun -n 1 perf stat -o ./$naive_r -e instructions,cycles,L1-dcache-load-misses,L1-dcache-loads ./naive_multiply.out > opt_out_$size.txt
-	srun -n 1 perf stat --append -o ./$naive_r -e LLC-load-misses,LLC-loads ./naive_multiply.out
+        
+        echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat -o ./$naive_r -e instructions,cycles,L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads ./naive_multiply.out > opt_out_$size.txt
+        echo 1 > /proc/sys/kernel/nmi_watchdog
 
 	echo "" > $opt_r
-	srun -n 1 perf stat -o ./$opt_r -e instructions,cycles,L1-dcache-load-misses,L1-dcache-loads ./opt_multiply.out > opt_out_$size.txt
-	srun -n 1 perf stat --append -o ./$opt_r -e LLC-load-misses,LLC-loads ./opt_multiply.out
-
+        echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat -o ./$opt_r -e instructions,cycles,L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads ./opt_multiply.out > opt_out_$size.txt
+        echo 0 > /proc/sys/kernel/nmi_watchdog
 done
