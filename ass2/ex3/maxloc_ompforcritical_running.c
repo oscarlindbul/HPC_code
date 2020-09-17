@@ -5,13 +5,16 @@
 #include <omp.h>
 #include <math.h>
 
-#define REPEAT 10
+#define REPEAT 100
 
 double mysecond();
 
 int main(int argc, char* argv[]){
 	
 	#define N 1000000
+	int threads = 32;
+	if (argc > 1)
+		threads = atoi(argv[1]);
 	
 	// Initialize x array
 	double x[N];
@@ -24,16 +27,19 @@ int main(int argc, char* argv[]){
 	double maxval = 0.0;
 	int maxloc = 0;
 	
-	omp_set_num_threads(32);
+	omp_set_num_threads(threads);
 	double t1,t2,sum,sumsq;
 	t1 = mysecond();
 	for (int l = 0; l < REPEAT; l++) {
 		t1 = mysecond();
-		#pragma omp for
+		#pragma omp parallel for
 	  	for (int i=0; i < N; i++){
-			if (x[i] > maxval) {
-				maxval = x[i];
-				maxloc = i;
+			#pragma omp critical
+			{
+				if (x[i] > maxval) {
+					maxval = x[i];
+					maxloc = i;
+				}
 			}
 	  	}	
 	  	t2 = mysecond();
@@ -46,7 +52,7 @@ int main(int argc, char* argv[]){
 	std = sqrt((sumsq/(double)REPEAT - average*average) * REPEAT/(double)(REPEAT - 1));
 
   	// Print out
-  	printf("maxloc=%d, maxval=%lf, exec_time=%11.8f +- (%11.8f) s\n", maxloc, maxval, average, std);
+  	printf("threads: %d, maxloc=%d, maxval=%lf, exec_time: %11.8f +- (%11.8f) s\n", threads, maxloc, maxval, average, std);
 	
 	return 0;
 }
