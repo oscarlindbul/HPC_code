@@ -32,14 +32,18 @@ int main(int argc, char* argv[]){
 	t3 = mysecond();
 	for (int l = 0; l < REPEAT; l++) {
 		t1 = mysecond();
-		#pragma omp parallel for
-	  	for (int i=0; i < N; i++){
-			int t = omp_get_thread_num();
-			if (x[i] > maxval_t[t]) {
-				maxval_t[t] = x[i];
-				maxloc_t[t] = i;
-			}
-	  	}	
+		#pragma omp parallel
+                {
+                    int t = omp_get_thread_num();
+                    max_val_t[t] = -1e30;
+                    #pragma omp for
+                    for (int i=0; i < N; i++){
+                            if (x[i] > maxval_t[t]) {
+                                    maxval_t[t] = x[i];
+                                    maxloc_t[t] = i;
+                            }
+                    }
+                }
 		
 		maxval = maxval_t[0];
 		maxloc = maxloc_t[0];

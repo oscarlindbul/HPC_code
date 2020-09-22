@@ -34,28 +34,32 @@ int main(int argc, char* argv[]){
 	double t1,t2,t3,t4,sum,sumsq;
 	t3 = mysecond();
 	for (int l = 0; l < REPEAT; l++) {
-		t1 = mysecond();
-		#pragma omp parallel for
-	  	for (int i=0; i < N; i++){
-			int t = omp_get_thread_num();
-			if (x[i] > data_t[t].maxval) {
-				data_t[t].maxval = x[i];
-				data_t[t].maxloc = i;
-			}
-	  	}	
-		
-		maxval = data_t[0].maxval;
-		maxloc = data_t[0].maxloc;
-		for (int i = 1; i < threads; i++) {
-			if (x[data_t[i].maxloc] > maxval)
-			{
-				maxval = data_t[i].maxval;
-				maxloc = data_t[i].maxloc;
-			}
-		}
-	  	t2 = mysecond();
-		sum += (t2-t1) / (double)REPEAT;
-		sumsq += (t2-t1)*(t2-t1) / (double)REPEAT;
+            t1 = mysecond();
+            #pragma omp parallel
+            {
+                int t = omp_get_thread_num();
+                data_t[t].maxval = -1e30;
+                #pragma omp for
+                for (int i=0; i < N; i++){
+                    if (x[i] > data_t[t].maxval) {
+                        data_t[t].maxval = x[i];
+                        data_t[t].maxloc = i;
+                    }
+                }
+            }	
+            
+            maxval = data_t[0].maxval;
+            maxloc = data_t[0].maxloc;
+            for (int i = 1; i < threads; i++) {
+                if (x[data_t[i].maxloc] > maxval)
+                {
+                    maxval = data_t[i].maxval;
+                    maxloc = data_t[i].maxloc;
+                }
+            }
+            t2 = mysecond();
+            sum += (t2-t1) / (double)REPEAT;
+            sumsq += (t2-t1)*(t2-t1) / (double)REPEAT;
   	}
 	t4 = mysecond() - t3;
   	
