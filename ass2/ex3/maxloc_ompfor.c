@@ -5,7 +5,7 @@
 #include <omp.h>
 #include <math.h>
 
-#define REPEAT 10
+#define REPEAT 100
 
 double mysecond();
 
@@ -26,10 +26,12 @@ int main(int argc, char* argv[]){
 	
 	omp_set_num_threads(32);
 	double t1,t2,sum,sumsq;
+	sum=0;
+	sumsq=0;
 	t1 = mysecond();
 	for (int l = 0; l < REPEAT; l++) {
 		t1 = mysecond();
-		#pragma omp for
+		#pragma omp parallel for
 	  	for (int i=0; i < N; i++){
 			if (x[i] > maxval) {
 				maxval = x[i];

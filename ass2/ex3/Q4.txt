@@ -1,0 +1,10 @@
+
+threads: 1 , maxloc=410063, maxval=977.892608, exec_time:  0.00259257 +- (  0.00001931 ) s, total time:  0.25925994
+threads: 2 , maxloc=475721, maxval=977.952588, exec_time:  0.00130093 +- (  0.00001156 ) s, total time:  0.13009882
+threads: 4 , maxloc=334678, maxval=992.242554, exec_time:  0.00065209 +- (  0.00001289 ) s, total time:  0.06521416
+threads: 8 , maxloc=792336, maxval=976.025575, exec_time:  0.00033515 +- (  0.00002982 ) s, total time:  0.03352308
+threads: 16 , maxloc=104014, maxval=982.308254, exec_time:  0.00031336 +- (  0.00004801 ) s, total time:  0.03134108
+threads: 20 , maxloc=782174, maxval=986.523101, exec_time:  0.00025997 +- (  0.00006033 ) s, total time:  0.02600098
+threads: 24 , maxloc=843322, maxval=993.248424, exec_time:  0.00023887 +- (  0.00023780 ) s, total time:  0.02389693
+threads: 28 , maxloc=843322, maxval=993.248424, exec_time:  0.00022512 +- (  0.00039250 ) s, total time:  0.02252078
+threads: 32 , maxloc=51643, maxval=985.038821, exec_time:  0.00021709 +- (  0.00049494 ) s, total time:  0.02171183
