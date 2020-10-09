@@ -2,6 +2,9 @@
 #include <stdio.h>
 #include <time.h>
 #include <sys/time.h>
+#include <math.h>
+
+#define REPEAT 100
 
 double mysecond();
 
@@ -16,20 +19,30 @@ int main(int argc, char* argv[]){
 		x[i] = ((double)(rand()) / RAND_MAX)*((double)(rand()) / RAND_MAX)*((double)(rand()) / RAND_MAX)*1000;
 	}
 	
-	// Compute maxloc and maxval                                                          
-	double maxval = 0.0;
-	int maxloc = 0;
-	double t1 = mysecond();
-  for (int i=0; i < N; i++){
-		if (x[i] > maxval) {
-			maxval = x[i];
-			maxloc = i;
-		}
-  }
-  double t2 = mysecond();
-  
+	// Compute maxloc and maxval
+	int maxloc;
+	double t1,t2,sum,sumsq,maxval;
+	sum=0;
+	sumsq=0;
+	for (int l = 0; l < REPEAT; l++) {
+		t1 = mysecond();
+	  	for (int i=0; i < N; i++){
+			if (x[i] > maxval) {
+				maxval = x[i];
+				maxloc = i;
+			}
+	  	}	
+	  	t2 = mysecond();
+		sum += (t2-t1);
+		sumsq += (t2-t1)*(t2-t1);
+  	}
+  	
+	double average,std;
+	average = sum / REPEAT;
+	std = sqrt((sumsq/(double)REPEAT - average*average) * REPEAT/(double)(REPEAT - 1));
+
   // Print out
-  printf("maxloc=%d, maxval=%lf, exec_time=%11.8f s\n", maxloc, maxval, (t2-t1));
+  printf("maxloc=%d, maxval=%lf, exec_time=%11.8f +- (%11.8f ) s\n", maxloc, maxval, average, std);
 	
 	return 0;
 }

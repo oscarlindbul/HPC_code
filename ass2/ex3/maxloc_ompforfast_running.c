@@ -35,7 +35,7 @@ int main(int argc, char* argv[]){
 		#pragma omp parallel
                 {
                     int t = omp_get_thread_num();
-                    max_val_t[t] = -1e30;
+                    maxval_t[t] = -1e30;
                     #pragma omp for
                     for (int i=0; i < N; i++){
                             if (x[i] > maxval_t[t]) {
@@ -65,7 +65,7 @@ int main(int argc, char* argv[]){
 	std = sqrt((sumsq - average*average) * REPEAT/(double)(REPEAT - 1));
 
   	// Print out
-  	printf("threads: %d, maxloc=%d, maxval=%lf, exec_time: %11.8f +- (%11.8f) s, total time: %11.8f\n", threads, maxloc, maxval, average, std, t4);
+  	printf("threads: %d , maxloc=%d, maxval=%lf, exec_time: %11.8f +- ( %11.8f ) s, total time: %11.8f\n", threads, maxloc, maxval, average, std, t4);
 	
 	return 0;
 }

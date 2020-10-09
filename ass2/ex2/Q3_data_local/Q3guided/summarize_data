@@ -1,0 +1,12 @@
+#!/bin/sh
+
+end_file="summary.txt"
+echo "Threads Bandwidth_(MB/s) Deviation" > $end_file
+files=(1 2 4 8 12 16 20 24 28 32)
+files=($(awk -v arr="${files[*]}" 'BEGIN{ split(arr,a," "); for (i in a) print "data_"a[i]".txt" }'))
+for file in ${files[@]}; do
+    threads=$(echo ${file%.txt} | grep -Po "[0-9]+")
+    echo $threads
+    bandwidth=($(awk 'BEGIN { sum=0; sumsq=0; n=0 } $1=="Copy:" { sum+=$2; sumsq += $2*$2; n++} END {print sum/n,sqrt((sumsq - sum^2/n)/(n-1))}' $file))
+    echo $threads' '${bandwidth[@]} >> $end_file
+done

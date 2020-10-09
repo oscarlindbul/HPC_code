@@ -68,7 +68,7 @@ int main(int argc, char* argv[]){
 	std = sqrt((sumsq - average*average) * REPEAT/(double)(REPEAT - 1));
 
   	// Print out
-  	printf("threads: %d, maxloc=%d, maxval=%lf, exec_time: %11.8f +- (%11.8f) s, total time: %11.8f\n", threads, maxloc, maxval, average, std, t4);
+  	printf("threads: %d , maxloc=%d, maxval=%lf, exec_time: %11.8f +- ( %11.8f ) s, total time: %11.8f\n", threads, maxloc, maxval, average, std, t4);
 	
 	return 0;
 }

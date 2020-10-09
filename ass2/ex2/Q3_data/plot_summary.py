@@ -12,4 +12,5 @@ for f,label in zip(files, labels):
     plt.errorbar(x=threads, y=bandwidths/1000,yerr=errors/1000, label=label)
 plt.xlabel("# of Threads")
 plt.ylabel("Bandwidth (GB/s)")
+plt.legend()
 plt.show()
