@@ -13,5 +13,5 @@ proc=processes
 dat_file="data_files/pi_seq_${proc}.txt"
 echo "" > $dat_file
 for r in {1..100}; do
-	srun -n $proc --ntasks-per-node=32 pi_other.out >> $dat_file
+	srun -n $proc --ntasks-per-node=32 pi_seq.out >> $dat_file
 done

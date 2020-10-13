@@ -1,0 +1,18 @@
+srun: Job 6188842 step creation temporarily disabled, retrying
+srun: Step created for job 6188842
+srun: Job 6188842 step creation temporarily disabled, retrying
+srun: Step created for job 6188842
+srun: Job 6188842 step creation temporarily disabled, retrying
+srun: Step created for job 6188842
+srun: Job 6188842 step creation temporarily disabled, retrying
+srun: Step created for job 6188842
+srun: Job 6188842 step creation temporarily disabled, retrying
+srun: Step created for job 6188842
+srun: Job step 6188842.76 aborted before step completely launched.
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: error: nid00061: tasks 32-63: Terminated
+srun: Terminating job step 6188842.76
+slurmstepd: error: *** STEP 6188842.76 ON nid00060 CANCELLED AT 2020-10-13T13:28:56 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 6188842 ON nid00060 CANCELLED AT 2020-10-13T13:28:56 DUE TO TIME LIMIT ***
+srun: got SIGCONT
+srun: forcing job termination
