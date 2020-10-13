@@ -4,7 +4,7 @@ import os
 import sys
 import matplotlib.pyplot as plt
 
-MAX_CPU_THREADS=12
+MAX_CPU_THREADS=32
 
 thread = []
 mean = []
