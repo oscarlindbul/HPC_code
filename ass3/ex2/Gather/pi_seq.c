@@ -44,7 +44,6 @@ int main(int argc, char* argv[])
     }
    	int counts[procs];
 	
-	t1 = MPI_Wtime();
 
 	MPI_Gather(&count, 1, MPI_INT, counts, 1, MPI_INT, 0, MPI_COMM_WORLD);
 	if (rank == 0) {
@@ -56,10 +55,10 @@ int main(int argc, char* argv[])
 	}
 
 	t2 = MPI_Wtime();
-
+	double local_time = t2-t1;
+	MPI_Reduce(&local_time, &time, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
+	
 	if (rank == 0) {
-		time = t2-t1;
-
 		printf("The result is %f , Execution time: %.6e\n", pi, time);
 	}
 

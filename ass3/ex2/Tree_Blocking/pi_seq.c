@@ -43,9 +43,6 @@ int main(int argc, char* argv[])
             count++;
         }
     }
-   
-   	// timing without Montecarlo counting
-	t1 = MPI_Wtime();
 
 	int stride = 1;
 	int tmp;
@@ -64,10 +61,10 @@ int main(int argc, char* argv[])
 		pi = ((double)count / (double)NUM_ITER) * 4.0;
 	}	
 	t2 = MPI_Wtime();
+	double local_time = t2-t1;
+	MPI_Reduce(&local_time, &time, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
 	
 	if (rank == 0) {
-		time = t2-t1;
-
 		printf("The result is %f , Execution time: %.6e\n", pi, time);
 	}
 

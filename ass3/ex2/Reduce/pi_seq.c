@@ -43,18 +43,18 @@ int main(int argc, char* argv[])
         }
     }
    	int tmp;
-	
-	t1 = MPI_Wtime();
 
 	MPI_Reduce(&count, &tmp, 1, MPI_INT, MPI_SUM, 0, MPI_COMM_WORLD);
 	if (rank == 0) {
 		count = tmp;	
     	// Estimate Pi and display the result
 		pi = ((double)count / (double)NUM_ITER) * 4.0;
-		
-		t2 = MPI_Wtime();
-		time = t2-t1;
-
+	}
+	t2 = MPI_Wtime();
+	double local_time = t2-t1;
+	MPI_Reduce(&local_time, &time, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
+	
+	if (rank == 0) {
 		printf("The result is %f , Execution time: %.6e\n", pi, time);
 	}
 

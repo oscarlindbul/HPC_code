@@ -17,7 +17,7 @@ int main(int argc, char* argv[])
 	double t1,t2, time;
 
 	MPI_Init_thread(&argc, &argv, MPI_THREAD_SINGLE, &provided);
-
+	t1 = MPI_Wtime();
 	MPI_Comm_size(MPI_COMM_WORLD, &procs);
 	MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 
@@ -40,9 +40,6 @@ int main(int argc, char* argv[])
         }
     }
    	
-	// timing without including Montecarlo counting
-	t1 = MPI_Wtime();
-
 	if (rank == 0) {
 		int tmp;
 		for (int i=1; i < procs; i++) {
@@ -57,10 +54,10 @@ int main(int argc, char* argv[])
 	}
 
 	t2 = MPI_Wtime();
-
+	double local_time = t2-t1;
+	MPI_Reduce(&local_time, &time, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
+	
 	if (rank == 0) {
-		time = t2-t1;
-
 		printf("The result is %f , Execution time: %.6e\n", pi, time);
 	}
 
