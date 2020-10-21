@@ -1,0 +1,3 @@
+Computing SAXPY on CPU ... Done!
+Computing SAXPY on GPU ... Done!
+Compare the output for each implementation ... Correct!
