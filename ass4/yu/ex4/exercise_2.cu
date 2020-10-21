@@ -15,7 +15,7 @@ inline int GET_THREADS(const int n, const int tpb)
 	if(n>=tpb){
 		return tpb;
 	}else{
-		return tpb;
+		return n;
 	}
 }
 
