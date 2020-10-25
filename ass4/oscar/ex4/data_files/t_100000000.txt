@@ -1,0 +1,5 @@
+GPU calculations complete! Took 245.508000 ms
+
+CPU calculations complete! Took 281.354000 ms
+
+Result check is complete! Arrays the same!

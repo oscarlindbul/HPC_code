@@ -1,0 +1,5 @@
+GPU calculations complete! Took 57.573000 ms
+
+CPU calculations complete! Took 2831.580000 ms
+
+Arrays differ! 3195570688.000000 != 1229604608.000000
